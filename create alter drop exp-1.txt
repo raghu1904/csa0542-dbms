@@ -1,0 +1,78 @@
+use sse;
+Database changed
+mysql> create table faculty(facid int(10),facname varchar(20),facdept varchar(10),salary int(20));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc faculty;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| facid   | int(10)     | YES  |     | NULL    |       |
+| facname | varchar(20) | YES  |     | NULL    |       |
+| facdept | varchar(10) | YES  |     | NULL    |       |
+| salary  | int(20)     | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_sse |
++---------------+
+| faculty       |
+| product       |
+| student       |
+| studepartment |
++---------------+
+4 rows in set (0.00 sec)
+
+mysql> select*from student;
++-------+---------+---------+--------+--------+
+| stuid | stuname | studept | stuage | course |
++-------+---------+---------+--------+--------+
+|     1 | naveen  | CSE     |     20 | NULL   |
+|     2 | raj     | ECE     |     18 | NULL   |
+|     3 | ram     | EEE     |     16 | NULL   |
+|     4 | vali    | IT      |     19 | NULL   |
++-------+---------+---------+--------+--------+
+4 rows in set (0.01 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_sse |
++---------------+
+| faculty       |
+| product       |
+| student       |
+| studepartment |
++---------------+
+4 rows in set (0.00 sec)
+
+mysql> drop table product;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_sse |
++---------------+
+| faculty       |
+| student       |
+| studepartment |
++---------------+
+3 rows in set (0.00 sec)
+
+mysql> alter table student add address varchar(15);
+Query OK, 4 rows affected (0.03 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select*from student;
++-------+---------+---------+--------+--------+---------+
+| stuid | stuname | studept | stuage | course | address |
++-------+---------+---------+--------+--------+---------+
+|     1 | naveen  | CSE     |     20 | NULL   | NULL    |
+|     2 | raj     | ECE     |     18 | NULL   | NULL    |
+|     3 | ram     | EEE     |     16 | NULL   | NULL    |
+|     4 | vali    | IT      |     19 | NULL   | NULL    |
++-------+---------+---------+--------+--------+---------+
+4 rows in set (0.00 sec)
+
+mysql>  
